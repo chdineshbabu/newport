@@ -1,4 +1,3 @@
-import { CardSpotlight } from "./ui/card-spotlight";
 import { HeroHighlight } from "./ui/hero-highlight";
 
 export default function Me() {
