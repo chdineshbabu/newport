@@ -9,7 +9,7 @@ const loadingStates = [
   },
   {
     text: "Travelling in a flight",
-  },
+  }, 
   {
     text: "Meeting Tyler Durden",
   },
@@ -17,10 +17,10 @@ const loadingStates = [
     text: "He makes soap",
   },
   {
-    text: "We goto a bar",
+    text: "We g oto a bar",
   },
   {
-    text: "Start a fight",
+    text: "Start a fight", 
   },
   {
     text: "We like it",
