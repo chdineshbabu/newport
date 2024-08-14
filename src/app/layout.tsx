@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../Styles/globals.css";
 import { FloatingNavDemo } from "./navbar";
+import dynamic from "next/dynamic";
+
+const Scene = dynamic(() => import("@/components/Scene"), { ssr: false });
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,19 +15,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={`${inter.className} dark`}>
-        <div>
-          <div>
-            <FloatingNavDemo />
-          </div>
+        <div className="min-h-[500vh]">
+          <FloatingNavDemo />
+          <Scene />
+          {children}
         </div>
-        {children}
-        </body>
+      </body>
     </html>
   );
 }
+

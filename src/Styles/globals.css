@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 0%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -32,7 +32,7 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 0 0% 0%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -58,6 +58,10 @@
     --chart-5: 340 75% 55%;
   }
 }
+*{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
 @layer base {
   * {
@@ -66,4 +70,119 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+.skill_list li{
+  border: solid 1px #3e3f42; 
+
+  
+}
+.skill_list li:hover{
+  box-shadow: 0px 1px 11px 4px rgba(32,117,190,0.81);
+-webkit-box-shadow: 0px 1px 11px 4px rgba(32,117,190,0.81);
+-moz-box-shadow: 0px 1px 11px 4px rgba(32,117,190,0.81);
+}
+.borderr{
+  box-shadow: 0px 1px 11px 4px rgba(32,117,190,0.81);
+-webkit-box-shadow: 0px 1px 11px 4px rgba(32,117,190,0.81);
+-moz-box-shadow: 0px 1px 11px 4px rgba(32,117,190,0.81);
+}
+.card{
+  border: solid rgba(255, 255, 255, 0.196) 0.5px;
+}
+
+@keyframes appear {
+  from{
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.anime{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 50% cover 35%;
+}
+@keyframes appear-right {
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.anime_right{
+  animation: appear-right linear;
+  animation-timeline: view();
+  animation-range: entry 50% cover 35%;
+}
+@keyframes appear-top {
+  from{
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.anime_top{
+  animation: appear-top linear;
+  animation-timeline: view();
+  animation-range: entry 50% cover 35%;
+}
+@keyframes disappear-right {
+  from{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  to {
+    opacity: 0.5;
+    transform: translateX(200px);
+  }
+}
+
+.rev_right{
+  animation: disappear-right linear;
+  animation-timeline: view();
+  animation-range: entry 100% cover 100%;
+}
+@keyframes disappear-left {
+  from{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  to {
+    opacity: 0.5;
+    transform: translateX(-200px);
+  }
+}
+
+.rev_left{
+  animation: disappear-left linear;
+  animation-timeline: view();
+  animation-range: entry 100% cover 100%;
+}
+@keyframes disappear-top {
+  from{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+}
+
+.rev_top{
+  animation: disappear-top linear;
+  animation-timeline: view();
+  animation-range: entry 100% cover 100%;
 }
