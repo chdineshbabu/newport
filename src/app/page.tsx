@@ -1,29 +1,27 @@
 'use client'
-import Image from "next/image";
-import { HeroHighlightDemo } from "./hero";
-import About from "@/components/About";
-import Skills from "@/components/Skill";
+
+import { useEffect, useState } from 'react';
 import Aboutt from "@/components/Aboutt";
 import Me from "@/components/Me";
 import Project from "@/components/Project";
 import Contact from "@/components/Contact";
 import { ShootingStars } from "@/components/ui/shooting-stars";
-import motion,{ useScroll, useTransform } from "framer-motion"
 import Hero from "@/components/Hero";
-import Scene from "@/components/Scene";
+import PreLoader from "@/components/PreLoad";
 
 export default function Home() {
-  const { scrollYProgress } = useScroll();
+  const [showPreLoader, setShowPreLoader] = useState(true);
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1.05, 1]);
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPreLoader(false);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    
     <main className="page">
-      
-      <Scene />
+      {showPreLoader && <PreLoader />}
       <Hero />
       <Aboutt />
       <Me />
@@ -31,7 +29,6 @@ export default function Home() {
       <hr />
       <Contact />
       <ShootingStars />
-      
     </main>
   );
 }
