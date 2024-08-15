@@ -59,9 +59,22 @@
   }
 }
 *{
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+
 }
+.res_text{
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .page{
+    display: none;
+  }
+  .res_text{
+    display: block;
+  }
+}
+
 
 @layer base {
   * {
@@ -71,6 +84,7 @@
     @apply bg-background text-foreground;
   }
 }
+
 .skill_list li{
   border: solid 1px #3e3f42; 
 

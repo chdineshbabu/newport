@@ -24,7 +24,7 @@ export default function Model() {
   useFrame(() => {
     if (actions["Experiment"]) {
       const action = actions["Experiment"];
-      action.time = (animationProgress.get() * action.getClip().duration) / 2;
+      action.time = (animationProgress.get() * action.getClip().duration) ;
     }
   });
 

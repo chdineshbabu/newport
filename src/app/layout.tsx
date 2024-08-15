@@ -21,8 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} dark`}>
-        <div className="min-h-[500vh]">
-          <FloatingNavDemo />
+        <div className="res_text text-center p-14">
+      <h1 className="  ">This is Not for Mobiles and small screens use Desktops or Laptops</h1>
+      <br />
+      <h1>Here is My resume Have a look</h1>
+      <button className="card py-2 px-4 hover:shadow-neutral-600 shadow-md hover:scale-110 transition-transform delay-100"><a href="https://drive.google.com/file/d/1oaqENrqKdB07KpNqcjNhQze8_4gXleDv/view?usp=sharing" target="blank">&gt;_ Download Resume</a></button>
+        
+      </div><div className="min-h-[500vh]">
           <Scene />
           {children}
         </div>

@@ -21,7 +21,8 @@ export default function Home() {
 
   return (
     
-    <main className="">
+    <main className="page">
+      
       <Scene />
       <Hero />
       <Aboutt />

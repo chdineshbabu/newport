@@ -78,6 +78,7 @@ const config = {
       },
     },
   },
+  
   plugins: [require("tailwindcss-animate"),addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
@@ -102,5 +103,6 @@ function addVariablesForColors({ addBase, theme }: any) {
     ":root": newVars,
   });
 }
+
 
 export default config

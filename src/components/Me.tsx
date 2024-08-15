@@ -1,16 +1,33 @@
+import { motion ,useInView } from "framer-motion";
 import { HeroHighlight } from "./ui/hero-highlight";
+import { useRef } from "react";
 
 export default function Me() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <HeroHighlight>
-      <div className="min-h-screen flex flex-col justify-center items-center gap-4 some">
+      <motion.div className="min-h-screen flex flex-col justify-center items-center gap-4 some">
         <h1 className="bg-gray-500 anime_top font-thin rounded-sm px-1 font-light">
           &gt;_ About_me.
         </h1>
         <h1 className="font-bold anime_top text-neutral-300 text-5xl p-4 pb-12">
           Highlights
         </h1>
-        <div className="w-[60%] anime bg-gray-950 border-neutral-400 card rounded-md h-auto p-4 flex flex-row gap-6">
+        <motion.div
+         ref={ref}
+         initial={{
+           x: 200, 
+           opacity: 0, 
+         }}
+         animate={{
+           x: isInView ? 0 : 200, 
+           opacity: isInView ? 1 : 0, 
+         }}
+         transition={{
+           duration: 0.8, 
+           ease: "easeOut",
+         }}className="w-[60%] bg-gray-950 border-neutral-400 card rounded-md h-auto p-4 flex flex-row gap-6">
           <div>
             <svg
               stroke="currentColor"
@@ -44,8 +61,21 @@ export default function Me() {
               impactful development.
             </p>
           </div>
-        </div>
-        <div className="w-[60%] anime_right bg-gray-950 border-neutral-400 card rounded-md h-auto p-4 flex flex-row gap-6">
+        </motion.div>
+        <motion.div
+        ref={ref}
+        initial={{
+          x: -200, 
+          opacity: 0, 
+        }}
+        animate={{
+          x: isInView ? 0 : -200, 
+          opacity: isInView ? 1 : 0, 
+        }}
+        transition={{
+          duration: 0.8, 
+          ease: "easeOut",
+        }} className="w-[60%] bg-gray-950 border-neutral-400 card rounded-md h-auto p-4 flex flex-row gap-6">
           <div>
           <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" className="w-4 h-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 89.61L22.486 177.18 256 293.937l111.22-55.61-104.337-31.9A16 16 0 0 1 256 208a16 16 0 0 1-16-16 16 16 0 0 1 16-16l-2.646 8.602 18.537 5.703a16 16 0 0 1 .008.056l27.354 8.365L455 246.645v12.146a16 16 0 0 0-7 13.21 16 16 0 0 0 7.293 13.406C448.01 312.932 448 375.383 448 400c16 10.395 16 10.775 32 0 0-24.614-.008-87.053-7.29-114.584A16 16 0 0 0 480 272a16 16 0 0 0-7-13.227v-25.42L413.676 215.1l75.838-37.92L256 89.61zM119.623 249L106.5 327.74c26.175 3.423 57.486 18.637 86.27 36.627 16.37 10.232 31.703 21.463 44.156 32.36 7.612 6.66 13.977 13.05 19.074 19.337 5.097-6.288 11.462-12.677 19.074-19.337 12.453-10.897 27.785-22.128 44.156-32.36 28.784-17.99 60.095-33.204 86.27-36.627L392.375 249h-6.25L256 314.063 125.873 249h-6.25z"></path></svg>
           </div>
@@ -66,9 +96,9 @@ export default function Me() {
               the tech industry.
             </p>
           </div>
-        </div>
+        </motion.div>
         
-      </div>
+      </motion.div>
     </HeroHighlight>
   );
 }
