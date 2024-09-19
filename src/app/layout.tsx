@@ -24,7 +24,7 @@ export default function RootLayout({
 
         <div className="res_text text-center p-14">
           <h1 className="  ">
-            This is Not for Mobiles and small screens use Desktops or Laptops
+            This is not Supported in Small screens, Use your Laptop or Desktop
           </h1>
           <br />
           <h1>Here is My resume Have a look</h1>
